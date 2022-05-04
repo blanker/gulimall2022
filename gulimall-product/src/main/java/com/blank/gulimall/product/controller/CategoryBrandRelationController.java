@@ -1,5 +1,6 @@
 package com.blank.gulimall.product.controller;
 
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.blank.common.utils.PageUtils;
 import com.blank.common.utils.R;
 import com.blank.gulimall.product.entity.CategoryBrandRelationEntity;
@@ -8,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 
@@ -33,6 +35,17 @@ public class CategoryBrandRelationController {
         PageUtils page = categoryBrandRelationService.queryPage(params);
 
         return R.ok().put("page", page);
+    }
+
+    @GetMapping("/catalog/list")
+    public R catalogList(@RequestParam("brandId") Long brandId){
+
+        List<CategoryBrandRelationEntity> list = categoryBrandRelationService.list(
+                Wrappers.lambdaQuery(CategoryBrandRelationEntity.class)
+                        .eq(CategoryBrandRelationEntity::getBrandId, brandId)
+        );
+
+        return R.ok().put("data", list);
     }
 
 

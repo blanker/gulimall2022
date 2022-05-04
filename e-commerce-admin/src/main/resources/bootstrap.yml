@@ -1,0 +1,42 @@
+server:
+  port: 7001
+  servlet:
+    context-path: /ecommerce-admin
+
+spring:
+  application:
+    name: ecommerce-admin
+  security:
+    user:
+      name: user
+      password: password
+  cloud:
+    nacos:
+      discovery:
+        enabled: true
+        server-addr: 192.168.0.108:8848
+        metadata:
+          management:
+            context-path: ${server.servlet.context-path}/actuator
+          user.name: user
+          user.password: password
+
+  thymeleaf:
+    check-template: false
+    check-template-location: false
+#  boot:
+#    admin:
+#      notify:
+#        mail:
+#          to: 9726331@qq.com
+#          from: ${spring.mail.username}
+#          cc: wangzhiyun@sina.com
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: '*'

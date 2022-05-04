@@ -1,0 +1,17 @@
+### get token
+POST http://localhost:7000/ecommerce-authority-center/authority/token
+Content-Type: application/json
+
+{
+"username": "blank",
+"password": "8e15625d6c158ec48f374efb77bd2714"
+}
+
+### register
+POST http://localhost:7000/ecommerce-authority-center/authority/register
+Content-Type: application/json
+
+{
+  "username": "blank2",
+  "password": "8e15625d6c158ec48f374efb77bd2714"
+}

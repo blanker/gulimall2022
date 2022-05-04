@@ -1,5 +1,7 @@
 package com.blank.gulimall.product.service.impl;
 
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Service;
 import java.util.Map;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
@@ -18,9 +20,16 @@ public class BrandServiceImpl extends ServiceImpl<BrandDao, BrandEntity> impleme
 
     @Override
     public PageUtils queryPage(Map<String, Object> params) {
+        final String key = (String) params.get("key");
+
         IPage<BrandEntity> page = this.page(
                 new Query<BrandEntity>().getPage(params),
-                new QueryWrapper<BrandEntity>()
+                Wrappers.lambdaQuery(BrandEntity.class)
+                        .and(StringUtils.isNotBlank(key), consumer -> {
+                            consumer.eq(BrandEntity::getBrandId, key)
+                                    .or()
+                                    .like(BrandEntity::getName, key);
+                        })
         );
 
         return new PageUtils(page);

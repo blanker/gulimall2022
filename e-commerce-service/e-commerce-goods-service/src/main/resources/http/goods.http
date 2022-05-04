@@ -1,0 +1,41 @@
+### goods info
+POST http://localhost:9000/ecommerce/ecommerce-goods-service/goods/goods-info
+Content-Type: application/json
+e-commerce-user: eyJhbGciOiJSUzI1NiJ9.eyJlLWNvbW1lcmNlLXVzZXIiOiJ7XCJpZFwiOjEsXCJ1c2VybmFtZVwiOlwiYmxhbmtcIn0iLCJqdGkiOiI4ZDk5ODBlZC03NDI0LTQyMWYtYjRlYS1mZjhiMjVjMTAyYmQiLCJleHAiOjE2NTE2ODAwMDB9.WGoZ1EpSd3Y0D1ICxtmutNsSPTTyQq20KVcuj12NPiSHd9JBTOBg0XW2GnEQfzdXtbaZZqtlwnJoxzgL7lza7ijb10r5tTDMzo3znHZVWObl8qBu-SEkNofOEIl-U9_xu2YVp_NLKulUCDpkBLqjdt_e3fJr8-jTE7dmQfOGthVAfU3pmuyDgNZMvRz8INJxeY2jklwslmoGHvzrqxMtwWt6uahm5spPFijbtWWedS4vx-0uob-_9dLKzaz9psrJHLVPVozdhQhnsIpooy0NystnUWrTQnOaJzchGmpwSatGtB9ZeBa4cF07m0S9to2lIgj64bI0t9Hfcsc3i_cgIg
+
+{
+  "ids": [1, 2, 3]
+}
+
+### get simple goods info by page
+GET http://localhost:9000/ecommerce/ecommerce-goods-service/goods/simple-goods-info-by-page?page=1
+Content-Type: application/json
+e-commerce-user: eyJhbGciOiJSUzI1NiJ9.eyJlLWNvbW1lcmNlLXVzZXIiOiJ7XCJpZFwiOjEsXCJ1c2VybmFtZVwiOlwiYmxhbmtcIn0iLCJqdGkiOiI4ZDk5ODBlZC03NDI0LTQyMWYtYjRlYS1mZjhiMjVjMTAyYmQiLCJleHAiOjE2NTE2ODAwMDB9.WGoZ1EpSd3Y0D1ICxtmutNsSPTTyQq20KVcuj12NPiSHd9JBTOBg0XW2GnEQfzdXtbaZZqtlwnJoxzgL7lza7ijb10r5tTDMzo3znHZVWObl8qBu-SEkNofOEIl-U9_xu2YVp_NLKulUCDpkBLqjdt_e3fJr8-jTE7dmQfOGthVAfU3pmuyDgNZMvRz8INJxeY2jklwslmoGHvzrqxMtwWt6uahm5spPFijbtWWedS4vx-0uob-_9dLKzaz9psrJHLVPVozdhQhnsIpooy0NystnUWrTQnOaJzchGmpwSatGtB9ZeBa4cF07m0S9to2lIgj64bI0t9Hfcsc3i_cgIg
+
+### simple goods info
+# 1 正常获取
+# 2 删除cache
+# 3 删除部分cache
+POST http://localhost:9000/ecommerce/ecommerce-goods-service/goods/simple-goods-info
+Content-Type: application/json
+e-commerce-user: eyJhbGciOiJSUzI1NiJ9.eyJlLWNvbW1lcmNlLXVzZXIiOiJ7XCJpZFwiOjEsXCJ1c2VybmFtZVwiOlwiYmxhbmtcIn0iLCJqdGkiOiI4ZDk5ODBlZC03NDI0LTQyMWYtYjRlYS1mZjhiMjVjMTAyYmQiLCJleHAiOjE2NTE2ODAwMDB9.WGoZ1EpSd3Y0D1ICxtmutNsSPTTyQq20KVcuj12NPiSHd9JBTOBg0XW2GnEQfzdXtbaZZqtlwnJoxzgL7lza7ijb10r5tTDMzo3znHZVWObl8qBu-SEkNofOEIl-U9_xu2YVp_NLKulUCDpkBLqjdt_e3fJr8-jTE7dmQfOGthVAfU3pmuyDgNZMvRz8INJxeY2jklwslmoGHvzrqxMtwWt6uahm5spPFijbtWWedS4vx-0uob-_9dLKzaz9psrJHLVPVozdhQhnsIpooy0NystnUWrTQnOaJzchGmpwSatGtB9ZeBa4cF07m0S9to2lIgj64bI0t9Hfcsc3i_cgIg
+
+{
+  "ids": [1, 2, 3]
+}
+
+### deduct goods inventory
+PUT http://localhost:9000/ecommerce/ecommerce-goods-service/goods/deduct-goods-inventory
+Content-Type: application/json
+e-commerce-user: eyJhbGciOiJSUzI1NiJ9.eyJlLWNvbW1lcmNlLXVzZXIiOiJ7XCJpZFwiOjEsXCJ1c2VybmFtZVwiOlwiYmxhbmtcIn0iLCJqdGkiOiI4ZDk5ODBlZC03NDI0LTQyMWYtYjRlYS1mZjhiMjVjMTAyYmQiLCJleHAiOjE2NTE2ODAwMDB9.WGoZ1EpSd3Y0D1ICxtmutNsSPTTyQq20KVcuj12NPiSHd9JBTOBg0XW2GnEQfzdXtbaZZqtlwnJoxzgL7lza7ijb10r5tTDMzo3znHZVWObl8qBu-SEkNofOEIl-U9_xu2YVp_NLKulUCDpkBLqjdt_e3fJr8-jTE7dmQfOGthVAfU3pmuyDgNZMvRz8INJxeY2jklwslmoGHvzrqxMtwWt6uahm5spPFijbtWWedS4vx-0uob-_9dLKzaz9psrJHLVPVozdhQhnsIpooy0NystnUWrTQnOaJzchGmpwSatGtB9ZeBa4cF07m0S9to2lIgj64bI0t9Hfcsc3i_cgIg
+
+[
+  {
+    "goodsId": 1,
+    "count": 100
+  },
+  {
+    "goodsId": 3,
+    "count": 1999800
+  }
+]

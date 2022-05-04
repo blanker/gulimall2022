@@ -2,11 +2,15 @@ package com.blank.gulimall.product.controller;
 
 import com.blank.common.utils.PageUtils;
 import com.blank.common.utils.R;
+import com.blank.common.validator.group.AddGroup;
+import com.blank.common.validator.group.UpdateGroup;
 import com.blank.gulimall.product.entity.BrandEntity;
 import com.blank.gulimall.product.service.BrandService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.Arrays;
 import java.util.Map;
 
@@ -50,7 +54,7 @@ public class BrandController {
      * 保存
      */
     @RequestMapping("/save")
-    public R save(@RequestBody BrandEntity brand){
+    public R save(@Validated({AddGroup.class}) @Valid @RequestBody BrandEntity brand){
 		brandService.save(brand);
 
         return R.ok();
@@ -60,7 +64,7 @@ public class BrandController {
      * 修改
      */
     @RequestMapping("/update")
-    public R update(@RequestBody BrandEntity brand){
+    public R update(@Validated({UpdateGroup.class}) @RequestBody BrandEntity brand){
 		brandService.updateById(brand);
 
         return R.ok();

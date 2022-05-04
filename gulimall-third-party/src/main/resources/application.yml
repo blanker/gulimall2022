@@ -1,0 +1,18 @@
+server:
+  port: 30000
+
+spring:
+  application:
+    name: gulimall-third-party
+  cloud:
+    nacos:
+      discovery:
+        enabled: true
+        server-addr: 192.168.0.108:8848
+alibaba:
+  cloud:
+    access-key: LTAI5tCaSmhDnNHsaj2XjUYo
+    secret-key: yU4JISMFEKcGoA3soTgKVTzbyz5Aoj
+    oss:
+      endpoint: oss-cn-chengdu.aliyuncs.com
+      bucket: gulimall-blank

@@ -1,0 +1,57 @@
+### async import goods
+POST http://localhost:9000/ecommerce/ecommerce-goods-service/async-goods/import-goods
+Content-Type: application/json
+e-commerce-user: eyJhbGciOiJSUzI1NiJ9.eyJlLWNvbW1lcmNlLXVzZXIiOiJ7XCJpZFwiOjEsXCJ1c2VybmFtZVwiOlwiYmxhbmtcIn0iLCJqdGkiOiI4ZDk5ODBlZC03NDI0LTQyMWYtYjRlYS1mZjhiMjVjMTAyYmQiLCJleHAiOjE2NTE2ODAwMDB9.WGoZ1EpSd3Y0D1ICxtmutNsSPTTyQq20KVcuj12NPiSHd9JBTOBg0XW2GnEQfzdXtbaZZqtlwnJoxzgL7lza7ijb10r5tTDMzo3znHZVWObl8qBu-SEkNofOEIl-U9_xu2YVp_NLKulUCDpkBLqjdt_e3fJr8-jTE7dmQfOGthVAfU3pmuyDgNZMvRz8INJxeY2jklwslmoGHvzrqxMtwWt6uahm5spPFijbtWWedS4vx-0uob-_9dLKzaz9psrJHLVPVozdhQhnsIpooy0NystnUWrTQnOaJzchGmpwSatGtB9ZeBa4cF07m0S9to2lIgj64bI0t9Hfcsc3i_cgIg
+
+[
+  {
+    "goodsCategory": "10001",
+    "brandCategory": "20001",
+    "goodsName": "iPhone 11",
+    "goodsPic": "",
+    "goodsDescription": "苹果手机",
+    "price": 100000,
+    "supply": 2000000,
+    "goodsProperty": {
+      "size": "12cm * 6.5cm",
+      "color": "绿色",
+      "material": "金属机身",
+      "pattern": "纯色"
+    }
+  },
+  {
+    "goodsCategory": "10001",
+    "brandCategory": "20002",
+    "goodsName": "Huawei P20",
+    "goodsPic": "",
+    "goodsDescription": "华为手机",
+    "price": 100000,
+    "supply": 2000000,
+    "goodsProperty": {
+      "size": "12cm * 6.5cm",
+      "color": "绿色",
+      "material": "金属机身",
+      "pattern": "纯色"
+    }
+  },
+  {
+    "goodsCategory": "10001",
+    "brandCategory": "20003",
+    "goodsName": "xiaomi 10",
+    "goodsPic": "",
+    "goodsDescription": "小米手机",
+    "price": 100000,
+    "supply": 2000000,
+    "goodsProperty": {
+      "size": "12cm * 6.5cm",
+      "color": "绿色",
+      "material": "金属机身",
+      "pattern": "纯色"
+    }
+  }
+]
+
+### task info
+GET http://localhost:9000/ecommerce/ecommerce-goods-service/async-goods/task-info?taskId=c05121e9-b72c-40df-bc1f-45675882b2db
+e-commerce-user: eyJhbGciOiJSUzI1NiJ9.eyJlLWNvbW1lcmNlLXVzZXIiOiJ7XCJpZFwiOjEsXCJ1c2VybmFtZVwiOlwiYmxhbmtcIn0iLCJqdGkiOiI4ZDk5ODBlZC03NDI0LTQyMWYtYjRlYS1mZjhiMjVjMTAyYmQiLCJleHAiOjE2NTE2ODAwMDB9.WGoZ1EpSd3Y0D1ICxtmutNsSPTTyQq20KVcuj12NPiSHd9JBTOBg0XW2GnEQfzdXtbaZZqtlwnJoxzgL7lza7ijb10r5tTDMzo3znHZVWObl8qBu-SEkNofOEIl-U9_xu2YVp_NLKulUCDpkBLqjdt_e3fJr8-jTE7dmQfOGthVAfU3pmuyDgNZMvRz8INJxeY2jklwslmoGHvzrqxMtwWt6uahm5spPFijbtWWedS4vx-0uob-_9dLKzaz9psrJHLVPVozdhQhnsIpooy0NystnUWrTQnOaJzchGmpwSatGtB9ZeBa4cF07m0S9to2lIgj64bI0t9Hfcsc3i_cgIg
+Accept: application/json

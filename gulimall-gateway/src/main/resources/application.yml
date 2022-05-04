@@ -1,0 +1,56 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.0.108:8848
+    gateway:
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOriginPatterns: "*"
+            allowedMethods: "*"
+            allowedHeaders: "*"
+            allowCredentials: true
+      routes:
+        - id: baidu
+          uri: https://www.baidu.com
+          predicates:
+            - Query=url,baidu
+
+        - id: qq
+          uri: https://www.qq.com
+          predicates:
+            - Query=url,qq
+
+        - id: product_route
+          uri: lb://gulimall-product
+          predicates:
+            - Path=/api/product/**
+          filters:
+            - RewritePath=/api/product/?(?<segment>.*),/product/$\{segment}
+
+        - id: third_part_route
+          uri: lb://gulimall-third-party
+          predicates:
+            - Path=/api/thirdparty/**
+          filters:
+            - RewritePath=/api/thirdparty/?(?<segment>.*),/$\{segment}
+
+        - id: admin_route
+          uri: lb://renren-fast
+          predicates:
+            - Path=/api/**
+          filters:
+            - RewritePath=/api/?(?<segment>.*),/renren-fast/$\{segment}
+server:
+  port: 88
+
+logging:
+  level:
+    org.springframework.cloud.gateway.route: info
+    org.springframework.cloud.gateway: debug
+    org.springframework.http.server.reactive: debug
+    org.springframework.web.reactive: debug
+    org.springframework.boot.autoconfigure.web: debug
+    reactor.netty: info
+    redisratelimiter: debug

@@ -1,0 +1,3 @@
+### get service instances
+GET http://localhost:8000/ecommerce-nacos-client/nacos-client/service-instance?serviceId=ecommerce-nacos-client
+token: imooc

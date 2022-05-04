@@ -1,0 +1,17 @@
+### login
+POST http://localhost:9000/ecommerce/login
+Content-Type: application/json
+
+{
+  "username": "blank",
+  "password": "8e15625d6c158ec48f374efb77bd2714"
+}
+
+### register
+POST http://localhost:9000/ecommerce/register
+Content-Type: application/json
+
+{
+  "username": "blank3",
+  "password": "8e15625d6c158ec48f374efb77bd2714"
+}

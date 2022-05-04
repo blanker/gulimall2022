@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+
 @SpringBootTest
 public class GulimallProductApplicationTests {
     @Autowired
@@ -16,4 +17,6 @@ public class GulimallProductApplicationTests {
         brandEntity.setName("Huawei");
         brandService.save(brandEntity);
     }
+
+
 }

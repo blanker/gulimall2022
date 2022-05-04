@@ -1,0 +1,34 @@
+###
+GET http://localhost:9000/ecommerce/ecommerce-account-service/address/addresses
+e-commerce-user: eyJhbGciOiJSUzI1NiJ9.eyJlLWNvbW1lcmNlLXVzZXIiOiJ7XCJpZFwiOjEsXCJ1c2VybmFtZVwiOlwiYmxhbmtcIn0iLCJqdGkiOiI2YTJmYzBhZS1hNTY5LTRmZmEtYmRmMC1lMjgyZTI3OTJmNWQiLCJleHAiOjE2NTE1OTM2MDB9.ALxLsQAHTMErvQ4otyVTRWPOj5GhrTlIj5DxLUxz1d6UJRZ5cBzdfaNfBQd9Crv-5rz6G-A1lPrDciqDP9RRhRXwPUYt2vkQDM_pByxm0BfjVOc3vvGYjydHEqX__G83jHpeMwBAs04DHL5gj0tTFRFgWSjap4guWO89BIGtKmNB7s0EhljVD5_LGCs9oRxK9j9sDqK_KktfFiMk_2Qu6IzBPqN9SIj8kyZFr3AyhFaqIT_GXTOKaKRm6pPE-wGSo1YMtHBsPcX8gk0PaukYNyzBe0I5kYt8e5YYZ50dfuXtCA9oxPmYWLhePdlUEvvNvk7l5jRDo-lktVcYHFyOsw
+
+### create
+POST http://localhost:9000/ecommerce/ecommerce-account-service/address/create-address
+e-commerce-user: eyJhbGciOiJSUzI1NiJ9.eyJlLWNvbW1lcmNlLXVzZXIiOiJ7XCJpZFwiOjEsXCJ1c2VybmFtZVwiOlwiYmxhbmtcIn0iLCJqdGkiOiI2YTJmYzBhZS1hNTY5LTRmZmEtYmRmMC1lMjgyZTI3OTJmNWQiLCJleHAiOjE2NTE1OTM2MDB9.ALxLsQAHTMErvQ4otyVTRWPOj5GhrTlIj5DxLUxz1d6UJRZ5cBzdfaNfBQd9Crv-5rz6G-A1lPrDciqDP9RRhRXwPUYt2vkQDM_pByxm0BfjVOc3vvGYjydHEqX__G83jHpeMwBAs04DHL5gj0tTFRFgWSjap4guWO89BIGtKmNB7s0EhljVD5_LGCs9oRxK9j9sDqK_KktfFiMk_2Qu6IzBPqN9SIj8kyZFr3AyhFaqIT_GXTOKaKRm6pPE-wGSo1YMtHBsPcX8gk0PaukYNyzBe0I5kYt8e5YYZ50dfuXtCA9oxPmYWLhePdlUEvvNvk7l5jRDo-lktVcYHFyOsw
+Content-Type: application/json
+
+{
+  "userId": 1,
+  "addressItems": [
+    {
+      "username": "hello",
+      "province": "yunnan",
+      "city": "kunming",
+      "phone": "1300000000",
+      "addressDetail": "century town"
+    }
+  ]
+}
+
+### get by id
+GET http://localhost:9000/ecommerce/ecommerce-account-service/address/address-info?id=1
+e-commerce-user: eyJhbGciOiJSUzI1NiJ9.eyJlLWNvbW1lcmNlLXVzZXIiOiJ7XCJpZFwiOjEsXCJ1c2VybmFtZVwiOlwiYmxhbmtcIn0iLCJqdGkiOiI2YTJmYzBhZS1hNTY5LTRmZmEtYmRmMC1lMjgyZTI3OTJmNWQiLCJleHAiOjE2NTE1OTM2MDB9.ALxLsQAHTMErvQ4otyVTRWPOj5GhrTlIj5DxLUxz1d6UJRZ5cBzdfaNfBQd9Crv-5rz6G-A1lPrDciqDP9RRhRXwPUYt2vkQDM_pByxm0BfjVOc3vvGYjydHEqX__G83jHpeMwBAs04DHL5gj0tTFRFgWSjap4guWO89BIGtKmNB7s0EhljVD5_LGCs9oRxK9j9sDqK_KktfFiMk_2Qu6IzBPqN9SIj8kyZFr3AyhFaqIT_GXTOKaKRm6pPE-wGSo1YMtHBsPcX8gk0PaukYNyzBe0I5kYt8e5YYZ50dfuXtCA9oxPmYWLhePdlUEvvNvk7l5jRDo-lktVcYHFyOsw
+
+### get by table-id
+POST http://localhost:9000/ecommerce/ecommerce-account-service/address/address-info-by-table-id
+Content-Type: application/json
+e-commerce-user: eyJhbGciOiJSUzI1NiJ9.eyJlLWNvbW1lcmNlLXVzZXIiOiJ7XCJpZFwiOjEsXCJ1c2VybmFtZVwiOlwiYmxhbmtcIn0iLCJqdGkiOiI2YTJmYzBhZS1hNTY5LTRmZmEtYmRmMC1lMjgyZTI3OTJmNWQiLCJleHAiOjE2NTE1OTM2MDB9.ALxLsQAHTMErvQ4otyVTRWPOj5GhrTlIj5DxLUxz1d6UJRZ5cBzdfaNfBQd9Crv-5rz6G-A1lPrDciqDP9RRhRXwPUYt2vkQDM_pByxm0BfjVOc3vvGYjydHEqX__G83jHpeMwBAs04DHL5gj0tTFRFgWSjap4guWO89BIGtKmNB7s0EhljVD5_LGCs9oRxK9j9sDqK_KktfFiMk_2Qu6IzBPqN9SIj8kyZFr3AyhFaqIT_GXTOKaKRm6pPE-wGSo1YMtHBsPcX8gk0PaukYNyzBe0I5kYt8e5YYZ50dfuXtCA9oxPmYWLhePdlUEvvNvk7l5jRDo-lktVcYHFyOsw
+
+{
+  "ids": [1, 2]
+}

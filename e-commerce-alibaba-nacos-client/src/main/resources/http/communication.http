@@ -1,0 +1,26 @@
+### rest template
+POST http://localhost:8000/ecommerce-nacos-client/communication/rest-template
+Content-Type: application/json
+
+{
+  "username": "blank",
+  "password": "8e15625d6c158ec48f374efb77bd2714"
+}
+
+### rest template with loadbalancer
+POST http://localhost:8000/ecommerce-nacos-client/communication/rest-template-load-balancer
+Content-Type: application/json
+
+{
+  "username": "blank",
+  "password": "8e15625d6c158ec48f374efb77bd2714"
+}
+
+### loadbalancer
+POST http://localhost:8000/ecommerce-nacos-client/communication/load-balancer
+Content-Type: application/json
+
+{
+  "username": "blank",
+  "password": "8e15625d6c158ec48f374efb77bd2714"
+}
