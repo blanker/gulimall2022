@@ -1,0 +1,33 @@
+server:
+  port: 8001
+  servlet:
+    context-path: /ecommerce-stream
+
+spring:
+  kafka:
+    bootstrap-servers: 192.168.0.108:9092
+    consumer:
+      group-id: ecommerce-stream-group
+      auto-offset-reset: latest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.ByteArrayDeserializer
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+#      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.ByteArraySerializer
+  zipkin:
+    sender:
+      type: web
+    base-url: http://192.168.0.108:9411
+  sleuth:
+    sampler:
+      probability: 1.0
+      rate: 100
+
+rocketmq:
+  name-server: 192.168.0.108:9876
+  producer:
+    group: rocketmq-group
+    send-message-timeout: 10000
+

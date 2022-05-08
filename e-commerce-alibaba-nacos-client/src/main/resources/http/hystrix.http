@@ -1,0 +1,22 @@
+### use annotation
+GET http://localhost:8000/ecommerce-nacos-client/hystrix/hystrix-command-annotation?serviceId=ecommerce-nacos-client
+
+### use simple command
+GET http://localhost:8000/ecommerce-nacos-client/hystrix/simple-hystrix-command?serviceId=ecommerce-nacos-client
+
+### use observable command
+GET http://localhost:8000/ecommerce-nacos-client/hystrix/hystrix-observable-command?serviceId=ecommerce-nacos-client
+
+### use cache hystrix command
+GET http://localhost:8000/ecommerce-nacos-client/hystrix/cache-hystrix-command?serviceId=ecommerce-nacos-client
+
+
+### use cache hystrix command annotation
+GET http://localhost:8000/ecommerce-nacos-client/hystrix/cache-hystrix-command-annotation?serviceId=ecommerce-nacos-client
+
+
+### request merge
+GET http://localhost:8000/ecommerce-nacos-client/hystrix/request-merge?serviceId=ecommerce-nacos-client
+
+### request merge annotation
+GET http://localhost:8000/ecommerce-nacos-client/hystrix/request-merge-annotation?serviceId=ecommerce-nacos-client

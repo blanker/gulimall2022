@@ -1,0 +1,9 @@
+### send kafka message
+GET http://localhost:8001/ecommerce-stream/kafka/send-message?key=key&topic=topic
+Accept: application/json
+Content-Type: application/json
+
+### send kafka message
+GET http://localhost:8001/ecommerce-stream/kafka/send-message?topic=topic
+Accept: application/json
+Content-Type: application/json

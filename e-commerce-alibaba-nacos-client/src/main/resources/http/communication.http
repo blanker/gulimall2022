@@ -24,3 +24,21 @@ Content-Type: application/json
   "username": "blank",
   "password": "8e15625d6c158ec48f374efb77bd2714"
 }
+
+### token-by-feign
+POST http://localhost:8000/ecommerce-nacos-client/communication/token-by-feign
+Content-Type: application/json
+
+{
+  "username": "blank",
+  "password": "8e15625d6c158ec48f374efb77bd2714"
+}
+
+### thinking-in-feign
+POST http://localhost:8000/ecommerce-nacos-client/communication/thinking-in-feign
+Content-Type: application/json
+
+{
+  "username": "blank",
+  "password": "8e15625d6c158ec48f374efb77bd2714"
+}

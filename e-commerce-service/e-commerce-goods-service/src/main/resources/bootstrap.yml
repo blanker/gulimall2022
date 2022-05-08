@@ -33,3 +33,13 @@ management:
     web:
       exposure:
         include: '*'
+
+seata:
+  tx-service-group: blank-ecommerce
+  registry:
+    type: file
+  service:
+    vgroup-mapping:
+      - blank-ecommerce: default
+    grouplist:
+      - default: "192.168.0.108:8091"

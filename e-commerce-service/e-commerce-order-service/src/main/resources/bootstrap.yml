@@ -1,0 +1,68 @@
+server:
+  port: 8002
+  servlet:
+    context-path: /ecommerce-order-service
+
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: ecommerce-order-service
+  cloud:
+    nacos:
+      discovery:
+        enabled: true
+        server-addr: 192.168.0.108:8848
+        metadata:
+          management:
+            context-path: ${server.servlet.context-path}/actuator
+    stream:
+      kafka:
+        binder:
+          broker: 192.168.0.108:9092
+          auto-create-topics: true
+      bindins:
+        logisticOutput:
+          destination: e-commerce-topic
+          content-type: text/plain
+    loadbalancer:
+      retry:
+        enabled: true
+
+  zipkin:
+    sender:
+      type: web
+    base-url: http://192.168.0.108:9411
+  sleuth:
+    sampler:
+      probability: 1.0
+      rate: 100
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 2000
+        readTimeout: 5000
+
+
+management:
+  endpoint:
+    health:
+      show-details: always
+    shutdown:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+seata:
+  tx-service-group: blank-ecommerce
+  registry:
+    type: file
+  service:
+    vgroup-mapping:
+      - blank-ecommerce: default
+    grouplist:
+      - default: "192.168.0.108:8091"

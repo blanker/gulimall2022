@@ -1,5 +1,6 @@
 package com.blank.ecommerce.conf;
 
+import com.alibaba.cloud.seata.web.SeataHandlerInterceptor;
 import com.blank.ecommerce.filter.LoginUserInfoInterceptor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -14,6 +15,9 @@ public class EcommerceWebMvcConfig extends WebMvcConfigurationSupport {
         registry.addInterceptor(new LoginUserInfoInterceptor())
                 .addPathPatterns("/**")
                 .order(0);
+
+//        registry.addInterceptor(new SeataHandlerInterceptor())
+//                .addPathPatterns("/**");
     }
 
     @Override

@@ -1,0 +1,19 @@
+ ### send rocket message with value
+GET http://localhost:8001/ecommerce-stream/rocketmq/send-with-value?key=key&topic=topic
+Accept: application/json
+Content-Type: application/json
+
+### send rocket message with key
+GET http://localhost:8001/ecommerce-stream/rocketmq/send-with-key?topic=topic
+Accept: application/json
+Content-Type: application/json
+
+### send rocket message with tag
+GET http://localhost:8001/ecommerce-stream/rocketmq/send-with-tag?topic=topic
+Accept: application/json
+Content-Type: application/json
+
+### send rocket message with all
+GET http://localhost:8001/ecommerce-stream/rocketmq/send-with-all?topic=topic
+Accept: application/json
+Content-Type: application/json

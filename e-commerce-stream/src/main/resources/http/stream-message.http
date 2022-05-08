@@ -1,0 +1,9 @@
+### send default message
+GET http://localhost:8001/ecommerce-stream/stream/default?key=key&topic=topic
+Accept: application/json
+Content-Type: application/json
+
+### send custom message
+GET http://localhost:8001/ecommerce-stream/stream/custom?topic=topic
+Accept: application/json
+Content-Type: application/json

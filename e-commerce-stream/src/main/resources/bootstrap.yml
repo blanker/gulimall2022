@@ -1,0 +1,48 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: ecommerce-stream
+  cloud:
+    nacos:
+      discovery:
+        enabled: true
+        server-addr: 192.168.0.108:8848
+        metadata:
+          management:
+            context-path: ${server.servlet.context-path}/actuator
+    stream:
+      kafka:
+        binder:
+          brokers: 192.168.0.108:9092
+          auto-create-topics: true
+      instance-count: 1
+      instance-index: 0
+      bindings:
+        output:
+          destination: topic
+          content-type: text/plain
+          producer:
+            partitionCount: 1
+            partitionKeyExpression: playload.id
+        input:
+          destination: topic
+          group: default-group
+          consumer:
+            partitioned: true
+
+        custom-output:
+          destination: topic-custom
+          content-type: text/plain
+        custom-input:
+          destination: topic-custom
+          group: custom-group
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
