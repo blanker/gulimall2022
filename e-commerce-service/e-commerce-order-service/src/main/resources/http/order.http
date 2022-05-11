@@ -1,0 +1,25 @@
+### 创建订单
+POST http://localhost:9000/ecommerce/ecommerce-order-service/order/create-order
+Content-Type: application/json
+Accept: application/json
+e-commerce-user: eyJhbGciOiJSUzI1NiJ9.eyJlLWNvbW1lcmNlLXVzZXIiOiJ7XCJpZFwiOjEsXCJ1c2VybmFtZVwiOlwiYmxhbmtcIn0iLCJqdGkiOiI4YzE1YmY0ZC1iMTAzLTQ3YzctOWEwMC1lMjY2ZjJjZTdhZjQiLCJleHAiOjE2NTIyODQ4MDB9.lDUhWqjzeApRdVaWKoc3Op4OHs_CNkDh5SZGN3EIqliKhPYy4WoWPEk38m_3uBA9BQa0DOAo9uFVCjMBujKk_Y7oUgnQ_oo_KkjOMdBL-4PptKDenfNYzn0JueD5JzYiFJnXc2O6-IpoqdEsyxbr_sblnFz9NmHE9fTltFHeBF8brRg1JcoUXrY6Hf7_lb9MFnAotCtCuvSRmovX_etkiEKaSm3WoSnNMCm7rqGCU-4T4WSjnzTonMzxZArzriIPFKC7KNg6FAVYdn5TvCGFQR43dSDrBVEkYMarDDrOjkQ2F0dHdldAYpivzcZ3Zq6fVOJNKi3h9VaqW-cH7Ykxtw
+
+{
+  "userAddress": 1,
+  "orderItems": [
+    {
+      "goodsId": 1,
+      "count": 10
+    },
+    {
+      "goodsId": 2,
+      "count": 20
+    }
+  ]
+}
+
+### 查询订单
+GET http://localhost:9000/ecommerce/ecommerce-order-service/order/page-simple-order-detail
+Content-Type: application/json
+Accept: application/json
+e-commerce-user: eyJhbGciOiJSUzI1NiJ9.eyJlLWNvbW1lcmNlLXVzZXIiOiJ7XCJpZFwiOjEsXCJ1c2VybmFtZVwiOlwiYmxhbmtcIn0iLCJqdGkiOiJiODAxMDBiMy02M2ViLTQyMDAtODg4Ni1kOTQ0MDU0M2Y3YWMiLCJleHAiOjE2NTIxOTg0MDB9.AwLhL5JXym6KYiahjkpVxxIRqb9T1XlP27GCQk05iAGMCejKtiuqDcQwQMQb-z78RPYVOUkgL9_9V3KJokNVzw9O8aBl6w5aaDtZ0S0n84BK8uoe-wruFCbSbDcBuIBc2Bh0cgmgofDQAIVCsSzoRH8eIdHbLY5GTq5WWPC3H7oAe4Mrk3gttWL_IHT6f1CoD4c5Coi5Hy1lkaSVz1oVxPEDG2C9KnXAT0l0BoNAzSwWHfvglYRBP_dBRopqq5cyTifcUgITC1NbFqbKIRfO3qL0jrPvXeC3M2GOsVe7R2vT1lZow6J8EQIWwB0g8y7_ufStoJWTwOHeplxs_DoQDw

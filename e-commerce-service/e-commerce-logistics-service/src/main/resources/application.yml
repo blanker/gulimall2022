@@ -21,10 +21,3 @@ spring:
       max-lifetime: 45000
       auto-commit: true
       pool-name: EcommercePoolHikari
-  redis:
-    database: 17
-    host: r-wz9xgy8dkpfncoygbwpd.redis.rds.aliyuncs.com
-    host: r-wz9xgy8dkpfncoygbwpd.redis.rds.aliyuncs.com
-    port: 6379
-    timeout: 10000
-    password: '520992wyz$'

@@ -1,13 +1,13 @@
 server:
-  port: 8002
+  port: 8004
   servlet:
-    context-path: /ecommerce-order-service
+    context-path: /ecommerce-logistics-service
 
 spring:
   main:
     allow-bean-definition-overriding: true
   application:
-    name: ecommerce-order-service
+    name: ecommerce-logistics-service
   cloud:
     nacos:
       discovery:
@@ -22,7 +22,7 @@ spring:
           broker: 192.168.0.108:9092
           auto-create-topics: true
       bindins:
-        logisticOutput:
+        logisticInput:
           destination: e-commerce-topic
           content-type: text/plain
     loadbalancer:

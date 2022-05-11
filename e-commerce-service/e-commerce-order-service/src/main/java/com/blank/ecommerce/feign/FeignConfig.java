@@ -2,6 +2,7 @@ package com.blank.ecommerce.feign;
 
 import feign.RequestInterceptor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.RequestContextHolder;
@@ -13,6 +14,7 @@ import java.util.Enumeration;
 @Slf4j
 @Configuration
 public class FeignConfig {
+    @Bean
     public RequestInterceptor headerInterceptor(){
         return template -> {
             final ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();

@@ -1,4 +1,4 @@
-package com.blank.ecommerce;
+package com.blank.ecommerce.dao;
 
 import com.blank.ecommerce.entity.EcommerceOrder;
 import org.springframework.data.domain.Page;

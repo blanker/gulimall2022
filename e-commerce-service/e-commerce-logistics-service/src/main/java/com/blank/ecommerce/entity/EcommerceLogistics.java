@@ -1,5 +1,6 @@
 package com.blank.ecommerce.entity;
 
+import cn.hutool.core.util.StrUtil;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,35 +15,27 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name="t_ecommerce_order")
 @EntityListeners(AuditingEntityListener.class)
-public class EcommerceOrder {
-
+@Table(name="t_ecommerce_logistics")
+public class EcommerceLogistics {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue()
     @Column(name="id", nullable = false)
     private Long id;
 
-    @Column(name="user_id", nullable = false)
     private Long userId;
-
-    @Column(name="address_id", nullable = false)
+    private Long orderId;
     private Long addressId;
-
-    @Column(name="order_detail", nullable = false)
-    private String orderDetail;
-
+    private String extraInfo;
     @CreatedDate
-    @Column(name="create_time", nullable = false)
     private Date createTime;
-
     @LastModifiedDate
-    @Column(name="update_time", nullable = false)
     private Date updateTime;
 
-    public EcommerceOrder(Long userId, Long addressId, String orderDetail) {
+    public EcommerceLogistics(Long userId, Long orderId, Long addressId, String extraInfo) {
         this.userId = userId;
+        this.orderId = orderId;
         this.addressId = addressId;
-        this.orderDetail = orderDetail;
+        this.extraInfo = StrUtil.isEmpty(extraInfo) ? "{}": extraInfo;
     }
 }
