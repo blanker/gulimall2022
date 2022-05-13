@@ -10,13 +10,13 @@ import org.springframework.context.annotation.Primary;
 
 import javax.sql.DataSource;
 
-@Configuration
+//@Configuration
 public class DataSourceProxyAutoConfiguration {
     @Autowired
     private DataSourceProperties dataSourceProperties;
 
-    @Primary
-    @Bean("dataSource")
+//    @Primary
+//    @Bean("dataSource")
     public DataSource dataSource(){
         HikariDataSource dataSource = new HikariDataSource();
         dataSource.setJdbcUrl(dataSourceProperties.getUrl());

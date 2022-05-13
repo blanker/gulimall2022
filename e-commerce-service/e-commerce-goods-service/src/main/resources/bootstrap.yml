@@ -43,3 +43,6 @@ seata:
       blank-ecommerce: default
     grouplist:
       default: "192.168.0.108:8091"
+  data-source-proxy-mode: AT
+  enabled: true
+  enable-auto-data-source-proxy: true

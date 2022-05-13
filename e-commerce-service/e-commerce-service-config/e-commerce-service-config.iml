@@ -40,7 +40,6 @@
     <orderEntry type="library" name="Maven: org.apache.tomcat.embed:tomcat-embed-el:9.0.62" level="project" />
     <orderEntry type="library" name="Maven: org.apache.tomcat.embed:tomcat-embed-websocket:9.0.62" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-webmvc:5.3.19" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-context:5.3.19" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-expression:5.3.19" level="project" />
     <orderEntry type="module" module-name="e-commerce-common" />
     <orderEntry type="library" name="Maven: com.alibaba.cloud:spring-cloud-starter-alibaba-seata:2021.0.1.0" level="project" />
@@ -49,6 +48,8 @@
     <orderEntry type="library" name="Maven: org.aspectj:aspectjweaver:1.9.7" level="project" />
     <orderEntry type="library" name="Maven: io.seata:seata-spring-boot-starter:1.4.2" level="project" />
     <orderEntry type="library" name="Maven: io.seata:seata-all:1.4.2" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-context:5.3.19" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-beans:5.3.19" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-all:4.1.76.Final" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-buffer:4.1.76.Final" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-codec:4.1.76.Final" level="project" />
@@ -122,7 +123,6 @@
     <orderEntry type="library" name="Maven: commons-fileupload:commons-fileupload:1.4" level="project" />
     <orderEntry type="library" name="Maven: commons-io:commons-io:2.2" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-web:5.3.19" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-beans:5.3.19" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-commons:3.1.1" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.security:spring-security-crypto:5.6.3" level="project" />
     <orderEntry type="library" name="Maven: io.github.openfeign:feign-core:11.8" level="project" />
