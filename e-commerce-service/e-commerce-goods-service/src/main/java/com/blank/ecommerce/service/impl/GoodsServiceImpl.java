@@ -11,6 +11,8 @@ import com.blank.ecommerce.goods.GoodsInfo;
 import com.blank.ecommerce.goods.SimpleGoodsInfo;
 import com.blank.ecommerce.service.IGoodsService;
 import com.blank.ecommerce.vo.PageSimpleGoodsInfo;
+import io.seata.tm.api.GlobalTransaction;
+import io.seata.tm.api.GlobalTransactionContext;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.IterableUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -96,6 +98,8 @@ public class GoodsServiceImpl  implements IGoodsService {
 
     @Override
     public Boolean deductGoodsInventory(List<DeductGoodsInventory> deductGoodsInventories) {
+        GlobalTransaction tx = GlobalTransactionContext.getCurrent();
+        log.info("deductGoodsInventory xid: [{}]", tx == null? "null" : tx.getXid());
         deductGoodsInventories.forEach(d -> {
             if (d.getCount() <= 0 ) {
                 throw new RuntimeException("purchase goods count need > 0");

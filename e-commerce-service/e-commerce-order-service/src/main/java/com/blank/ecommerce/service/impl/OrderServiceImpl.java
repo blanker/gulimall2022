@@ -94,8 +94,12 @@ public class OrderServiceImpl implements IOrderService {
 
         // 5 发送订单物流消息
         LogisticsMessage logisticsMessage = new LogisticsMessage();
+        logisticsMessage.setOrderId(order.getId());
+        logisticsMessage.setUserId(AccessContext.getLoginUserInfo().getId());
+        logisticsMessage.setAddressId(orderInfo.getUserAddress());
+        logisticsMessage.setExtraInfo(JSON.toJSONString(orderInfo.getOrderItems()));
         logisticsSource.logisticsOutput().send(
-                MessageBuilder.withPayload(logisticsMessage)
+                MessageBuilder.withPayload(JSON.toJSONString(logisticsMessage))
                         .build()
         );
 

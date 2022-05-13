@@ -19,7 +19,7 @@ import java.util.Date;
 @Table(name="t_ecommerce_logistics")
 public class EcommerceLogistics {
     @Id
-    @GeneratedValue()
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id", nullable = false)
     private Long id;
 
