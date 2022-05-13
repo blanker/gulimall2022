@@ -22,8 +22,9 @@ spring:
       auto-commit: true
       pool-name: EcommercePoolHikari
   redis:
-    database: 17
+    timeout: 20000
     host: r-wz9xgy8dkpfncoygbwpd.redis.rds.aliyuncs.com
+    password: 520992wyz$
+    database: 17
     port: 6379
-    timeout: 10000
-    password: '520992wyz$'
+    connect-timeout: 20000

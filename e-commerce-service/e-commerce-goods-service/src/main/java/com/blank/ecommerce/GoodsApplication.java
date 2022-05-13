@@ -1,9 +1,11 @@
 package com.blank.ecommerce;
 
 import com.alibaba.fastjson.JSON;
-import com.blank.ecommerce.conf.DataSourceProxyAutoConfiguration;
-import io.seata.rm.datasource.DataSourceProxy;
+import io.seata.spring.boot.autoconfigure.properties.SeataProperties;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.ApplicationArguments;
+import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
@@ -16,8 +18,7 @@ import javax.sql.DataSource;
 @SpringBootApplication
 @Slf4j
 @EnableJpaAuditing()
-@Import(DataSourceProxyAutoConfiguration.class)
-public class GoodsApplication {
+public class GoodsApplication implements ApplicationRunner {
     public static void main(String[] args) {
         ConfigurableApplicationContext context = SpringApplication.run(GoodsApplication.class, args);
         String[] beanNames = context.getBeanNamesForType(DataSource.class);
@@ -28,6 +29,14 @@ public class GoodsApplication {
         String[] beanNamesForType = context.getBeanNamesForType(DataSourceProxy.class);
         log.info("DataSourceProxy: [{}]", JSON.toJSONString(beanNamesForType));
 
+    }
+
+    @Autowired
+    private SeataProperties seataProperties;
+
+    @Override
+    public void run(ApplicationArguments args) throws Exception {
+        log.info(JSON.toJSONString(seataProperties));
     }
 }
 

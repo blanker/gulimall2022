@@ -98,8 +98,9 @@ public class GoodsServiceImpl  implements IGoodsService {
 
     @Override
     public Boolean deductGoodsInventory(List<DeductGoodsInventory> deductGoodsInventories) {
-        GlobalTransaction tx = GlobalTransactionContext.getCurrent();
-        log.info("deductGoodsInventory xid: [{}]", tx == null? "null" : tx.getXid());
+        final GlobalTransaction globalTransaction = GlobalTransactionContext.getCurrent();
+        log.info("GlobalTransactionContext: [{}]", globalTransaction == null ? "null" : globalTransaction.getXid());
+
         deductGoodsInventories.forEach(d -> {
             if (d.getCount() <= 0 ) {
                 throw new RuntimeException("purchase goods count need > 0");
