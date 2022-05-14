@@ -69,6 +69,9 @@ seata:
   data-source-proxy-mode: AT
   enabled: true
   enable-auto-data-source-proxy: true
+  client:
+    undo:
+      log-serialization: fastjson
 
 logging:
   level:
