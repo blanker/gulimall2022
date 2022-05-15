@@ -17,22 +17,19 @@ import org.springframework.context.annotation.Primary;
 import javax.sql.DataSource;
 
 @Configuration
-@Import(SeataDataSourceAutoConfiguration.class)
-@AutoConfigureAfter(DataSourceAutoConfiguration.class)
-//@AutoConfigureBefore(SeataDataSourceAutoConfiguration.class)
 public class DataSourceProxyAutoConfiguration {
-//    @Autowired
+    @Autowired
     private DataSourceProperties dataSourceProperties;
 
-//    @Primary
-//    @Bean("dataSource")
+    @Primary
+    @Bean("dataSourceProxy")
     public DataSource dataSource(){
         HikariDataSource dataSource = new HikariDataSource();
         dataSource.setJdbcUrl(dataSourceProperties.getUrl());
         dataSource.setUsername(dataSourceProperties.getUsername());
         dataSource.setPassword(dataSourceProperties.getPassword());
         dataSource.setDriverClassName(dataSourceProperties.getDriverClassName());
-        return dataSource;
-//        return new DataSourceProxy(dataSource);
+//        return dataSource;
+        return new DataSourceProxy(dataSource);
     }
 }

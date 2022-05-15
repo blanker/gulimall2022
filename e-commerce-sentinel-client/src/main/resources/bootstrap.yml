@@ -1,0 +1,72 @@
+server:
+  port: 8100
+  servlet:
+    context-path: /ecommerce-sentinel-client
+
+spring:
+  application:
+    name: ecommerce-sentinel-client
+  cloud:
+    nacos:
+      discovery:
+        enabled: true
+        server-addr: 192.168.0.108:8848
+        metadata:
+          management:
+            context-path: ${server.servlet.context-path}/actuator
+    sentinel:
+      transport:
+        dashboard: localhost:7777
+        port: 8719
+      eager: true
+      datasource:
+        ds:
+          nacos:
+            server-addr: ${spring.cloud.nacos.discovery.server-addr}
+            dataId: ${spring.application.name}-sentinel
+            data-type: json
+            rule-type: flow
+
+
+
+  zipkin:
+    sender:
+      type: web
+    base-url: http://192.168.0.108:9411
+  sleuth:
+    sampler:
+      probability: 1.0
+      rate: 100
+
+management:
+  endpoint:
+    health:
+      show-details: always
+    shutdown:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+feign:
+  compression:
+    request:
+      enabled: true
+      mime-types: text/xml,application/xml,application/json
+      min-request-size: 1024
+    response:
+      enabled: true
+  httpclient:
+    enabled: false
+  okhttp:
+    enabled: true
+  hystrix:
+    enabled: true
+  sentinel:
+    enabled: true
+
+resttemplate:
+  sentinel:
+    enabled: true
+

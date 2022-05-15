@@ -25,6 +25,28 @@ spring:
         metadata:
           management:
             context-path: /actuator
+    sentinel:
+      eager: true
+      transport:
+        port: 8720
+        dashboard: localhost:7777
+      filter:
+        enabled: false
+      datasource:
+        ds1:
+          nacos:
+            server-addr: ${spring.cloud.nacos.discovery.server-addr}
+            dataId: gateway-flow-rule-sentinel
+            data-type: json
+            rule-type: gw-flow
+
+
+#        ds1.file:
+#          file: classpath:gateway-flow-rule-sentinel.json
+#          rule-type: gw-flow
+#        ds2.file:
+#          file: classpath:gateway-flow-rule-api-sentinel.json
+#          rule-type: gw-api-group
   zipkin:
     sender:
       type: web
@@ -45,3 +67,4 @@ management:
     web:
       exposure:
         include: '*'
+

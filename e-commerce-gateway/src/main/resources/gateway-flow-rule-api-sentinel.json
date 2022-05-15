@@ -1,0 +1,14 @@
+[
+    {
+        "apiName": "nacos-client-api",
+        "predicateItems": [
+            {
+                "pattern": "/ecommerce/ecommerce-nacos-client/nacos-client/project-config"
+            },
+            {
+                "pattern": "/ecommerce/ecommerce-nacos-client/**",
+                "matchStrategy": 1
+            }
+        ]
+    }
+]

@@ -1,0 +1,45 @@
+### code flow rule
+GET http://localhost:8100/ecommerce-sentinel-client/code/flow-rule
+Accept: application/json
+Content-Type: application/json
+
+### by resource
+GET http://localhost:8100/ecommerce-sentinel-client/dashboard/by-resource
+Accept: application/json
+Content-Type: application/json
+
+### by url
+GET http://localhost:8100/ecommerce-sentinel-client/dashboard/by-url
+Accept: application/json
+Content-Type: application/json
+
+### sentinel rest template
+POST http://localhost:8100/ecommerce-sentinel-client/rest-template/get-token
+Accept: application/json
+Content-Type: application/json
+
+{
+  "username": "blank",
+  "password": "8e15625d6c158ec48f374efb77bd2714"
+}
+
+### sentinel fallback
+POST http://localhost:8100/ecommerce-sentinel-client/sentinel-fallback/get-token
+Accept: application/json
+Content-Type: application/json
+
+{
+  "username": "blank",
+  "password": "8e15625d6c158ec48f374efb77bd2714"
+}
+
+### sentinel ignore exception
+GET http://localhost:8100/ecommerce-sentinel-client/sentinel-fallback/ignore-exception?code=2
+Accept: application/json
+Content-Type: application/json
+
+### sentinel feign client
+GET http://localhost:8100/ecommerce-sentinel-client/sentinel-feign/result-by-feign?code=2
+Accept: application/json
+Content-Type: application/json
+
